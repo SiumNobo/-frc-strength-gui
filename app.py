@@ -129,5 +129,4 @@ fig1, fig2 = global_shap_figs()
 g1.pyplot(fig1)
 g2.pyplot(fig2)
 
-st.markdown("---")
-st.caption("XGBoost (n_estimators=100, lr=0.1, max_depth=6) · 513 samples, 80/20 split (random_state=0) · Test R² ≈ 0.982, RMSE ≈ 1.72 MPa · SHAP computed on the test set via shap.Explainer(model.predict, x_test), matching the manuscript.")
+
