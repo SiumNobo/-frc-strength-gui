@@ -10,14 +10,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install playwright && playwright install chromium
+      - run: pip install playwright && playwright install chromium && playwright install-deps chromium
       - run: |
           python -c "
           from playwright.sync_api import sync_playwright
           with sync_playwright() as p:
               b = p.chromium.launch()
               pg = b.new_page()
-              pg.goto('https://YOUR-APP.streamlit.app', timeout=60000)
+              pg.goto('https://frcstrengthgui.streamlit.app/', timeout=60000)
               pg.wait_for_timeout(8000)
               try:
                   pg.click('text=Yes, get this app back up', timeout=5000)
